@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>NgsdkElem</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src="ngsdk-es2015.js"></script>
+  <script src="ngsdk-es5.js"></script>
+</head>
+
+<body>
+  <!-- <n4-root></n4-root> -->
+  <n4-ngsdk-elem [fireconfig]="fireconfig"></n4-ngsdk-elem>
+  <script>
+    const elem = document.getElementsByTagName("n4-ngsdk-elem")[0];
+    if (elem) {
+      elem.addEventListener("login", (data) => { console.log('login event') }, false);
+      elem.addEventListener("invite", (data) => { console.log('invite event') }, false);
+      elem.addEventListener("guest", (data) => { console.log('guest event') }, false);
+    }
+  </script>
+</body>
+
+</html>

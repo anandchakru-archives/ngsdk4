@@ -1,27 +1,35 @@
 # Ngsdk4
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.0.
+## ngsdk-lib 
+The core library to interact with invite and help rsvp, add to calendar and navigate to maps.
+Can be used directly in an angular base invite.
 
-## Development server
+## ngsdk-elem
+The Custom elements is a wrapper around ngsdk-lib to be used by non-angular invites.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+#### Testing
 
-## Code scaffolding
+```sh
+npm run build:elem
+npm i -g serve
+cd dist/ngsdk-elem
+serve
+```
+and hit https://localhost:5000
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## ngsdk-test
+The test application for ngsdk-lib.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+#### Commands used to create this application - reference
+```sh
+ng new ngsdk4 --style scss --prefix n4 --routing=false --create-application=false
+cd ngsdk4
 
-## Running unit tests
+ng g application ngsdk-test --style scss --prefix n4 --routing=false
+ng g library ngsdk-lib --prefix n4
+ng g application ngsdk-elem --style scss --prefix n4 --routing=false
+ng add @angular/elements --project=ngsdk-elem
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+npm i -D fs-extra concat
+```
